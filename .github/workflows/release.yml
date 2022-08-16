@@ -35,5 +35,5 @@ jobs:
       - name: Push to release
         run: |
           git checkout -b release || git checkout release
-          git add dist && git commit -m "release with github actions"
+          git add docs && git commit -m "release with github actions"
           git push -u origin release --force
