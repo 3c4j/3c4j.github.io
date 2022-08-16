@@ -19,7 +19,7 @@ const memberGenerator = (i) => ({
   id: i + 10,
   username: uuid(),
   nickname: `名称-${i}`,
-  avatar: 'https://static.igroupes.com/default_avatar.jpg',
+  avatar: '/static/images/logo_grey.png',
   roleId: i + 10,
   roleName: `角色-${i + 10}`,
   desc:

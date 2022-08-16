@@ -116,7 +116,7 @@ export default () => {
           iconOnly
           theme={theme}
           level="danger"
-          placement="top"
+          tooltipPlacement="top"
           tooltip="编辑schema"
           onClick={toggleDrawer}
         >

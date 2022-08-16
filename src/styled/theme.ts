@@ -8,9 +8,9 @@
 
 import { AppTheme } from '@core/app/theme'
 
+import antdTheme from './themes/antd'
 import cxdTheme from './themes/cxd'
 import darkTheme from './themes/dark'
-import antdTheme from './themes/antd'
 import defaultTheme from './themes/def'
 
 export const theme = new AppTheme({

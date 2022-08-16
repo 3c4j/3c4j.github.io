@@ -5,7 +5,7 @@
 import { times } from 'lodash'
 
 const fakeUserInfo = {
-  avatar: 'https://static.igroupes.com/default_avatar.jpg',
+  avatar: '/static/images/logo_grey.png',
   nickname: '梦醒十分2',
   signature: '就知道睡觉～就知道睡觉～就知道睡觉～就知道睡觉～就知道睡觉～就知道睡觉～就知道睡觉～',
   limit: '*',
@@ -25,7 +25,7 @@ export default {
   'GET ovapi/system/user/item/$id': ({ data = {} }: any) => {
     return {
       data: {
-        avatar: 'https://static.igroupes.com/default_avatar.jpg',
+        avatar: '/static/images/logo_grey.png',
         id: data.id,
         username: 'userLoginUsername',
         nickname: '你好啊',
@@ -58,6 +58,11 @@ export default {
     }
   },
   'POST ovapi/stat/data': () => {
+    return {
+      code: 0,
+    }
+  },
+  'POST ovapi/user/logout': () => {
     return {
       code: 0,
     }

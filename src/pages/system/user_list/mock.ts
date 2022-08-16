@@ -6,7 +6,7 @@ const generator = (i) => ({
   id: i + 10,
   username: uuid(),
   nickname: `名称-${i}`,
-  avatar: 'https://static.igroupes.com/default_avatar.jpg',
+  avatar: '/static/images/logo_grey.png',
   roleId: i + 100,
   roleName: `角色名称-${i}`,
   desc:
