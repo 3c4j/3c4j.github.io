@@ -21,6 +21,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Config git global config
+        run: |
+          git config --global user.email "to3c4j@example.com"
+          git config --global user.name "3c4j"
+
       - name: Build
         run: |
           yarn install
