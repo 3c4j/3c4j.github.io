@@ -3,7 +3,7 @@ name: Build And Release
 on:
   workflow_dispatch:
   push:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
@@ -12,22 +12,22 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-    
+
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Build
-      run: |
-        yarn install
-        yarn ovine build --mock
+      - name: Build
+        run: |
+          yarn install
+          yarn ovine build --env=staging --mock
 
-    - name: Push to release
-      run: |
-        git checkout -b release
-        git add dist && git commit -m "release with github actions"
-        git push --force
+      - name: Push to release
+        run: |
+          git checkout -b release || git checkout release
+          git add dist && git commit -m "release with github actions"
+          git push -u origin release --force
