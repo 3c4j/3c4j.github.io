@@ -30,6 +30,7 @@ jobs:
         run: |
           yarn install
           yarn ovine build --env=staging --mock
+          mv dist docs
 
       - name: Push to release
         run: |
